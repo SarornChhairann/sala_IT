@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lab2/Entity/categoryList.dart';
 import 'package:lab2/Homework5/listProduct.dart';
+import 'package:lab2/Homework5/orderList.dart';
 import 'package:lab2/infrustruter/style.dart';
 
 class SaleScreen extends StatefulWidget {
@@ -12,7 +13,9 @@ class SaleScreen extends StatefulWidget {
 }
 
 class _SaleScreenState extends State<SaleScreen> {
-  int _itemSelected = 0;
+
+  late int _itemSelected;
+
   List lstTopFood = [
     "assets/image/burgerCard.jpeg",
     "assets/image/pizzaCard.jpeg"
@@ -24,6 +27,13 @@ class _SaleScreenState extends State<SaleScreen> {
     CategoryList(title: "Donut", img: "assets/image/donut.png"),
     CategoryList(title: "Coffee", img: "assets/image/coffee-cup.png"),
   ];
+
+
+  @override
+  void initState() {
+    _itemSelected = 0;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -316,6 +326,9 @@ class _SaleScreenState extends State<SaleScreen> {
         onTap: (index) {
           setState(() {
             _itemSelected = index;
+            if(_itemSelected==2){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>const OrderList()));
+            }
           });
         },
         showSelectedLabels: true,

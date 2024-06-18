@@ -200,32 +200,54 @@ class _ListProductsState extends State<ListProducts> {
                       const Text("Specials",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
                       Expanded(
                         child: ListView.builder(
-                            itemCount: lstCategory.length,
-                            itemBuilder: (context,index){
-                              var item = lstCategory[index];
-                              return Container(
-                                padding: const EdgeInsets.all(10),
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          Text(item.title!,style: const TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
-                                          const SizedBox(height: 10,),
-                                          const Text("Welcome to our burger restaurant, where we serve up delicious, juicy burgers that will leave you craving for more.",
-                                            maxLines: 2,overflow: TextOverflow.ellipsis,
-                                          ),
-                                          const SizedBox(height: 10,),
-                                          const Text("25.50\$",style: TextStyle(fontSize: 18),)
-                                        ],
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              );
-                            }
+                          reverse: false,
+                          itemCount: lstCategory.length,
+                          itemBuilder: (context,index){
+                            var item = lstCategory[index];
+                            return Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10),
+                                boxShadow:  [
+                                  BoxShadow(
+                                    offset: const Offset(0,0),
+                                    color: Colors.grey.withOpacity(0.1),
+                                    blurRadius: 2,
+                                    spreadRadius: 2
+                                  )
+                                ]
+                              ),
+                              margin: const EdgeInsets.symmetric(vertical: 10),
+                              padding: const EdgeInsets.all(10),
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(item.title!,style: const TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                                        const SizedBox(height: 10,),
+                                        const Text("Welcome to our burger restaurant, where we serve up delicious, juicy burgers that will leave you craving for more.",
+                                          maxLines: 2,overflow: TextOverflow.ellipsis,
+                                        ),
+                                        const SizedBox(height: 10,),
+                                        const Text("25.50\$",style: TextStyle(fontSize: 18,color: Colors.green,fontWeight: FontWeight.bold),)
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 100,
+                                    width: 150,
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(10),
+                                      child: Image.network(item.img!,fit: BoxFit.cover,),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          }
                         ),
                       ),
                     ],
