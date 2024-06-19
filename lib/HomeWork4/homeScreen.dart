@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lab2/HomeWork4/detail.dart';
 import 'package:lab2/HomeWork4/download.dart';
 
-import '../Entity/movieEntity.dart';
+import '../Entity/homework4/movieEntity.dart';
 import '../infrustruter/style.dart';
 
 class MovieScreen extends StatefulWidget {

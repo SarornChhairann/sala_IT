@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lab2/HomeWork4/homeScreen.dart';
 
-import '../Entity/movieEntity.dart';
+import '../Entity/homework4/movieEntity.dart';
 import '../infrustruter/style.dart';
 
 class DownloadPage extends StatefulWidget  {

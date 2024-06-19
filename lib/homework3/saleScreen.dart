@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../Entity/products.dart';
+import '../Entity/homework5/products.dart';
 
 class SaleScreen extends StatefulWidget {
   const SaleScreen({super.key});
